@@ -6,9 +6,14 @@ describe('Work wuth basic elements', function(){
         cy.reload()
     })
 
-    it('Find Title', () =>{
+    it.only('Find Title', () =>{
         cy.title()
             .should('be.equal', 'Campo de Treinamento')
+
+        cy.title()
+            .then(title => {
+                console.log(title)
+            })
         })
 
     it('Find Text', () => {
@@ -77,7 +82,7 @@ describe('Work wuth basic elements', function(){
             .should('have.value', '2graucomp')
         
     })
-    it.only('Combo multiplo', () => {
+    it('Combo multiplo', () => {
         cy.get('[data-testid="dataEsportes"]')
         .select(['natacao','futebol', 'Corrida', 'Karate'])
         
