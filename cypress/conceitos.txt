@@ -1,0 +1,2 @@
+Mock = Objeto Falso
+Dar nome a um evento = as
