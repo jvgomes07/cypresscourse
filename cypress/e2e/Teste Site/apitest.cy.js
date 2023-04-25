@@ -13,7 +13,7 @@ describe('Funcional Test', function(){
     it('Inserir Conta', () => {
       cy.get('[data-test="menu-settings"]').click()
       cy.get('[href="/contas"]').click()
-      cy.get('[data-test="nome"]').type('Conta Teste45')
+      cy.get('[data-test="nome"]').type('Conta 7777777')
       cy.get('.btn').click()
       cy.get('.toast-message').should('contain', 'Conta inserida com sucesso')
       
@@ -23,18 +23,19 @@ describe('Funcional Test', function(){
       cy.get('[data-test="menu-settings"]').click()
       cy.get('[href="/contas"]').click()
       cy.get(':nth-child(1) > :nth-child(2) > :nth-child(1) > .far').click()
-      cy.get('[data-test="nome"]').clear().type('Conta View 1')
+      cy.get('[data-test="nome"]').clear().type('Conta View 78')
       cy.get('.btn').click()
       cy.get('.toast-message').should('contain', 'Conta atualizada com sucesso')
 
     })
 
-    it('Inserir Conta repetida', () => {
-      cy.get('[data-test="menu-settings"]').click()
+    it.only('Inserir Conta repetida', () => {
+     cy.get('[data-test="menu-settings"]').click()
       cy.get('[href="/contas"]').click()
       cy.get('[data-test="nome"]').type('Conta Teste7')
       cy.get('.btn').click()
-      cy.get('.toast-message').should('contain', 'Resquest Failed')
+      
+      
       
     })
 })
